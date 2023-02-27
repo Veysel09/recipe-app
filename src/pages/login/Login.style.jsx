@@ -53,3 +53,8 @@ export const StyledButton = styled.button`
     opacity: 0.8;
   }
 `;
+
+export const StyledImg = styled.img`
+  width: 150px;
+  margin: 1rem;
+`;
