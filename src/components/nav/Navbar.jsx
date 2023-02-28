@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./Navbar.style";
 import Nav, { Brand, Menu, MenuLink, Hamburger } from "./Navbar.style";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useNavigate } from "react-router-dom";
+import { useLoginContext } from "../../context/LoginProvider";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  const { user, setUser } = useLoginContext();
   return (
     <Nav justify="space-between" wrap="wrap">
       <Brand to="/">
@@ -22,13 +23,17 @@ const Navbar = () => {
         <MenuLink to="/">Home</MenuLink>
         <MenuLink to="about">About</MenuLink>
         <MenuLink to="register">Register</MenuLink>
-        <MenuLink
-          to="Logout"
-          onClick={() => sessionStorage.clear() & navigate("/")}
-      
-        >
-          Logout
-        </MenuLink>
+
+        {!user.email ? (
+          <MenuLink to="/Login">Login</MenuLink>
+        ) : (
+          <MenuLink
+            to="/Login"
+            onClick={() => setUser({ email: "", password: "" })}
+          >
+            Logout
+          </MenuLink>
+        )}
       </Menu>
     </Nav>
   );

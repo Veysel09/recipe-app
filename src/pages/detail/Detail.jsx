@@ -7,7 +7,7 @@ import {
   IngContainer,
   OtherPart,
 } from "./Detail.style";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import diet from "../../assets/diet.svg";
 
 const Detail = () => {
@@ -67,6 +67,7 @@ const Detail = () => {
           ))}
         </IngContainer>
       </DetailPart>
+      <Outlet />
     </DetailContainer>
   );
 };
