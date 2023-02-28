@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   LoginContainer,
   StyledImg,
@@ -10,16 +10,17 @@ import {
 } from "./Login.style";
 import { useNavigate } from "react-router-dom";
 import meal from "../../assets/meal.svg";
+
+
 const Login = () => {
   const navigate = useNavigate();
+  const [user, setUser] = useState({email:"", password:""})
 
-  const userInfo = {
-    username: "admin",
-  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sessionStorage.setItem("user", JSON.stringify(userInfo));
+  
     navigate("/");
   };
 
@@ -28,8 +29,10 @@ const Login = () => {
       <FormContainer>
         <StyledImg src={meal} />
         <Header>{"<WEYCELL>"}Recipe</Header>
-        <StyledForm onSubmit={handleSubmit}>
-          <StyledInput placeholder="Enter username" type="text" />
+        <StyledForm onSubmit={(e)=>handleSubmit(e)}>
+          <StyledInput placeholder="Enter username" type="text"
+          value={}
+          />
           <StyledInput placeholder="Enter Password" type="password" />
           <StyledButton type="submit">Login</StyledButton>
         </StyledForm>
