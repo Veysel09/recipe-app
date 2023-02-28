@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Header } from "../login/Login.style";
 
 const Home = () => {
@@ -16,9 +16,9 @@ const Home = () => {
     setRecipes(data.hits);
     // console.log(recipes);
   };
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div>
