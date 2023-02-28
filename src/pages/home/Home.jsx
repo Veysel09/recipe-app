@@ -14,7 +14,7 @@ const Home = () => {
     const { data } = await axios(url);
     // console.log(data);
     setRecipes(data.hits);
-    console.log(recipes);
+    // console.log(recipes);
   };
   useEffect(() => {
     getData();
