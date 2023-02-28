@@ -1,5 +1,4 @@
 import { ThemeProvider } from "styled-components";
-
 import theme from "./components/globalStyles/theme";
 import AppRouter from "./router/AppRouter";
 

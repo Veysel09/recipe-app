@@ -21,10 +21,10 @@ const Home = () => {
   }, []);
 
   return (
-  <div>
-    <Header setQuery={setQuery} />
+    <div>
+      <Header setQuery={setQuery} setSelectedMeal={setSelectedMeal} />
     </div>
-  )
+  );
 };
 
 export default Home;

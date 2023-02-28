@@ -19,6 +19,7 @@ export const FormContainer = styled(Flex)`
   padding: 0.5rem;
   flex-direction: column;
 `;
+
 export const Header = styled.h1`
   color: white;
   font-size: 3rem;
