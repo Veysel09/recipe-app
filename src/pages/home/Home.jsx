@@ -1,32 +1,60 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { Header } from "../login/Login.style";
+import axios from "axios";
+import Header from "../../components/header/Header";
+import Cards from "../../components/cards/Cards";
+import { HeaderText, HomeImg, ImgDiv } from "./Home.style";
+import homeSvg from "../../assets/home.svg";
 
 const Home = () => {
-  const APP_ID = "09ff1b9e";
-  const APP_KEY = "25fc08ec531dc15f110dda2c14d8ca8d";
+  const APP_ID = process.env.REACT_APP_APP_ID;
+  const APP_KEY = process.env.REACT_APP_APP_KEY;
+
   const [query, setQuery] = useState("egg");
   const [selectedMeal, setSelectedMeal] = useState("breakfast");
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(null);
+  const mealType = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
+
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${selectedMeal}`;
 
   const getData = async () => {
-    const { data } = await axios(url);
-    // console.log(data);
-    setRecipes(data.hits);
-    // console.log(recipes);
+    if (query) {
+      try {
+        const { data } = await axios(url);
+        setRecipes(data.hits);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert("Fill the Form");
+    }
   };
+  console.log(recipes);
+
   // useEffect(() => {
   //   getData();
   // }, []);
 
   return (
     <div>
-      <Header setQuery={setQuery} setSelectedMeal={setSelectedMeal} />
+      <Header
+        setQuery={setQuery}
+        setSelectedMeal={setSelectedMeal}
+        mealType={mealType}
+        getData={getData}
+      />
+
+      {!recipes && (
+        <ImgDiv>
+          <HomeImg src={homeSvg} />
+        </ImgDiv>
+      )}
+
+      {recipes?.length === 0 && (
+        <HeaderText>The Food can not be found</HeaderText>
+      )}
+
+      {recipes?.length > 0 && <Cards recipes={recipes} />}
     </div>
   );
 };
-
 export default Home;
-
-// https://api.edamam.com/search?q=egg&app_id=09ff1b9e&app_key=25fc08ec531dc15f110dda2c14d8ca8d&mealType=breakfast
