@@ -39,6 +39,7 @@ export const StyledInput = styled.input`
 
 export const StyledForm = styled.form`
   display: flex;
+  
   flex-direction: column;
 `;
 
@@ -57,5 +58,5 @@ export const StyledButton = styled.button`
 
 export const StyledImg = styled.img`
   width: 150px;
-  margin: 1rem;
+  margin: 1.1rem;
 `;
