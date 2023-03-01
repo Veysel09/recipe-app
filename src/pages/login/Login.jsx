@@ -30,7 +30,7 @@ const Login = () => {
     <LoginContainer>
       <FormContainer>
         <StyledImg src={meal} />
-        <Header>{"<WEYCELL>"}Recipe</Header>
+        <Header>{"<WEYCELL/>"}Recipe</Header>
         <StyledForm onSubmit={(e) => handleSubmit(e)}>
           <StyledInput
             placeholder="Enter Email"
