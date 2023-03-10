@@ -2,11 +2,17 @@ import styled from "styled-components";
 import Flex from "../../components/globalStyles/Flex.style";
 
 
-export const AboutContainer = styled(Flex)`
+export const AboutContainer = styled.div`
   background: ${({ theme }) => theme.colors.mainColor};
-  flex-direction: column;
+  justify-content: space-between;
 `;
 
-export const AboutImg = styled(Flex)`
+export const Image = styled.img`
   width: 350px;
+  float: left;
+`
+export const AboutText = styled(Flex)`
+  font-size: 2rem;
+  font-weight: 600;
+  float: right;
 `
