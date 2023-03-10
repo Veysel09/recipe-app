@@ -1,10 +1,13 @@
-import Header from "../../components/header/Header";
+import { AboutContainer, AboutImg } from "./About.style";
+
+
 
 const About = () => {
   return (
-    <div>
-      <Header />
-    </div>
+    <AboutContainer>
+   <AboutImg></AboutImg>
+   {/* <AboutText></AboutText> */}
+    </AboutContainer>
   );
 };
 
