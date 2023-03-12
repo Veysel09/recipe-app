@@ -11,7 +11,7 @@ export const Image = styled.img`
   width: 350px;
   float: left;
 `
-export const AboutText = styled(Flex)`
+export const AboutText = styled.div`
   font-size: 2rem;
   font-weight: 600;
   float: right;
