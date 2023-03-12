@@ -7,9 +7,13 @@ export const AboutContainer = styled.div`
 export const Image = styled.img`
   width: 350px;
   float: left;
-`
+`;
 export const AboutText = styled.div`
   font-size: 2rem;
   font-weight: 600;
   float: right;
-`
+`;
+
+export const AboutSpan = styled.div`
+  font-weight: 600;
+`;
