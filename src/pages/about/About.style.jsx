@@ -5,8 +5,8 @@ export const AboutContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 350px;
-  float: left; 
+  width: 750px;
+  float: inline-start;
 `;
 export const AboutText = styled.div`
   font-size: 2rem;
