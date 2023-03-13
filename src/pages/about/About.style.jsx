@@ -6,7 +6,7 @@ export const AboutContainer = styled.div`
 
 export const Image = styled.img`
   width: 350px;
-  float: left;
+  float: left; 
 `;
 export const AboutText = styled.div`
   font-size: 2rem;
