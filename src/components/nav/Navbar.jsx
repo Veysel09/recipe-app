@@ -22,7 +22,7 @@ const Navbar = () => {
       <Menu isOpen={isOpen} onClick={() => setIsOpen(false)}>
         <MenuLink to="/">Home</MenuLink>
         <MenuLink to="about">About</MenuLink>
-        <MenuLink to="register">Register</MenuLink>
+       
 
         {!user.email ? (
           <MenuLink to="/Login">Login</MenuLink>
