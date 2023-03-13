@@ -7,7 +7,7 @@ const About = () => {
       <Image src={AboutImg} alt="" />
 
       <AboutText>
-        <AboutSpan>The aim of the Project</AboutSpan>: Creating a react project
+        <AboutSpan>The aim of the Project :</AboutSpan>Creating a react project
         styled with styled component logic with login/logout feature. It is
         necessary to log in to enter the food details and see the about us page.
         Skills/Tools: React-Router | Styled Component | axios |async/await

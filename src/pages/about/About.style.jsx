@@ -15,5 +15,5 @@ export const AboutText = styled.div`
 `;
 
 export const AboutSpan = styled.div`
-  font-weight: 600;
+  font-weight: 700;
 `;
